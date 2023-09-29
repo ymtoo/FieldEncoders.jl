@@ -27,23 +27,14 @@ using Test
         @inferred encode(NeRFEncoder(inputdim, 1, T(0), T(10), true), cuda_xs)
     end
 
-    numsamples = 200000
-    #μ = randn(T, inputdim)
     Σ = stack(1:bz) do i
         half_cov = randn(T, inputdim, inputdim)
         half_cov * half_cov'
     end
-    #half_cov = randn(T, inputdim, inputdim)
-    #Σ = half_cov * half_cov'
     @inferred encode(NeRFEncoder(inputdim, 1, T(0), T(10)), xs, Σ)
     if CUDA.functional()
         cuda_Σ = CuArray(Σ)
         @inferred encode(NeRFEncoder(inputdim, 1, T(0), T(10)), cuda_xs, cuda_Σ)
     end
-    # encoder1 = NeRFEncoder(inputdim, 1, T(0), T(10))
-    # enc_x = encode(encoder1, μ, Σ)
-    # s = rand(MvNormal(μ, Σ), numsamples)
-    # enc_s = encode(encoder1, s)
-    # enc_x == sum(enc_s; dims = 2) ./ numsamples
 
 end
