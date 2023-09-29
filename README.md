@@ -1,4 +1,5 @@
 # FieldEncoders.jl
+Field encoding for Neural Radiance Fields (NeRF) in Julia. The implementation is based on [`Field Encoders`](https://github.com/nerfstudio-project/nerfstudio/blob/main/nerfstudio/field_components/encodings.py) in [`nerfstudio`](https://github.com/nerfstudio-project/nerfstudio/tree/main).
 
 ## 1. NeRF Encoder
 ```bash
