@@ -1,5 +1,10 @@
+using Pkg
+Pkg.activate("./scripts")
+
 using FieldEncoders
 using GLMakie
+
+include("visualize_utils.jl")
 
 inputdim = 2
 numfrequencies = 4
@@ -20,17 +25,6 @@ for (i, x) ∈ enumerate(range(0, 1, resolution))
     end
 end
 
-function visualize_data(x)
-    n = size(x, 1)
-    fig = Figure(resolution=(100*n,100))
-    for i ∈ 1:n
-        ax = Axis(fig[1,i])
-        hidedecorations!(ax)
-        heatmap!(ax, x[i,:,:]'; colormap = :plasma, colorrange = (-1.0, 1.0))
-    end
-    fig
-end
-
 let 
     fig = visualize_data(grid)
     save("./scripts/figures/nerfencoder_input.png", fig)
@@ -47,5 +41,3 @@ let
         save("./scripts/figures/nerfencoder_encoded_$(covariance_magnitude)_cov.png", fig)
     end
 end
-
-

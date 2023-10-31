@@ -41,7 +41,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-Transform positions `xs` using NeRF encoding or integrated positional encodings if `covs` is provided.
+Transform positions `xs` using NeRF positional encoding or integrated positional encodings if `covs` is provided.
 
 # Reference
 - NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis, Mildenhall et al., ECCV 2020
