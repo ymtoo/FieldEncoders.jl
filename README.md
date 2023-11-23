@@ -1,4 +1,7 @@
 # FieldEncoders.jl
+[![CI](https://github.com/ymtoo/FieldEncoders.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/ymtoo/FieldEncoders.jl/actions/workflows/CI.yml)
+[![codecov](https://codecov.io/gh/ymtoo/FieldEncoders.jl/graph/badge.svg?token=bkkNXbAtCK)](https://codecov.io/gh/ymtoo/FieldEncoders.jl)
+
 Field encoding for Neural Radiance Fields (NeRF) in Julia. The implementation is based on [`Field Encoders`](https://github.com/nerfstudio-project/nerfstudio/blob/main/nerfstudio/field_components/encodings.py) in [`nerfstudio`](https://github.com/nerfstudio-project/nerfstudio/tree/main).
 
 ## 1. NeRF Encoder
