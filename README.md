@@ -30,5 +30,21 @@ $ julia scripts/visualize_hashencoder.jl
 ### Encoding 
 <img src="./scripts/figures/hashencoder_encoded.png" width="1000">
 
+## 3. Spherical Harmonic Encoder
+```bash
+$ julia scripts/visualize_sphericalharmonicencoder.jl
+```
+### Level 1
+<img src="./scripts/figures/shencoder_encoded_level_1.png" width="100">
+
+### Level 2
+<img src="./scripts/figures/shencoder_encoded_level_2.png" width="300">
+
+### Level 3
+<img src="./scripts/figures/shencoder_encoded_level_3.png" width="500">
+
+### Level 4
+<img src="./scripts/figures/shencoder_encoded_level_4.png" width="700">
+
 ## Reference
 - Matthew Tancik, Ethan Weber, Evonne Ng, Ruilong Li, Brent Yi, Terrance Wang, Alexander Kristoffersen, Jake Austin, Kamyar Salahi, Abhik Ahuja, David Mcallister, Justin Kerr, and Angjoo Kanazawa. 2023. Nerfstudio: A Modular Framework for Neural Radiance Field Development. In ACM SIGGRAPH 2023 Conference Proceedings (SIGGRAPH '23). Association for Computing Machinery, New York, NY, USA, Article 72, 1–12.

@@ -6,6 +6,7 @@ version = "0.1.0"
 [deps]
 ChainRulesCore = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
+EllipsisNotation = "da5c29d0-fa7d-589e-88eb-ea29b0a81949"
 Flux = "587475ba-b771-5e3f-ad9e-33799f191a9c"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 MLUtils = "f1d291b0-491e-4a28-83b9-f70985020b54"

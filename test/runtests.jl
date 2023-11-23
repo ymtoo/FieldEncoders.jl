@@ -86,3 +86,43 @@ end
     end
 
 end
+
+@testset "SphericalHarmonicEncoder" begin
+
+    levels = 4
+
+    height = 100
+    width = 150
+
+    θ = range(-π, π, width)
+    ϕ = range(0, π, height)
+    grid = FieldEncoders.meshgrid(θ, ϕ)
+    grid_θ = grid[1,:,:]
+    grid_ϕ = grid[2,:,:]
+
+    encoder = SphericalHarmonicEncoder(levels)
+
+    directions = stack([cos.(grid_θ) .* sin.(grid_ϕ), 
+                       sin.(grid_θ) .* sin.(grid_ϕ),
+                       cos.(grid_ϕ)]; dims=1) 
+
+    encoded = encode(encoder, directions)
+    @test size(encoded) == (FieldEncoders.get_out_dim(encoder), length(θ), length(ϕ))
+    @inferred encode(encoder, directions)
+
+    Zygote.pullback(encoder, directions) do encoder1, directions1
+        encode(encoder1, directions1)
+    end
+
+    if CUDA.functional()
+        cuda_directions = CuArray(directions)
+        cuda_encoded = encode(encoder, cuda_directions)
+        @test size(cuda_encoded) == (FieldEncoders.get_out_dim(encoder), length(θ), length(ϕ))
+        @inferred encode(encoder, cuda_directions)
+
+        Zygote.pullback(encoder, cuda_directions) do encoder1, cuda_directions1
+            encode(encoder1, cuda_directions1)
+        end
+    end
+
+end

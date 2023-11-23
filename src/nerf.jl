@@ -71,5 +71,3 @@ function encode(encoder::NeRFEncoder{T},
     end
     encoder.includeinput ? vcat(xs, encoded_xs) : encoded_xs
 end
-
-(encoder::NeRFEncoder)(xs, args...) = encode(encoder, xs, args...)

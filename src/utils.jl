@@ -19,6 +19,21 @@ end
 """
 $(SIGNATURES)
 
+Creates grids of coordinates specified by `xs` and `ys`.
+"""
+function meshgrid(xs::AbstractVector{T}, ys::AbstractVector{T}) where {T}
+    xy = similar(xs, 2, length(xs), length(ys))
+    for i ∈ eachindex(xs)
+        for j ∈ eachindex(ys)
+            xy[:,i,j] = [xs[i],ys[j]]
+        end
+    end
+    xy
+end
+
+"""
+$(SIGNATURES)
+
 Creates grids of coordinates specified by `xs`, `ys` and `zs`.
 """
 function meshgrid(xs::AbstractVector{T}, ys::AbstractVector{T}, zs::AbstractVector{T}) where {T}

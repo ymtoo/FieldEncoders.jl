@@ -2,7 +2,6 @@ using Pkg
 Pkg.activate("./scripts")
 
 using FieldEncoders
-using GLMakie
 
 include("visualize_utils.jl")
 

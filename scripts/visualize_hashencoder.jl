@@ -2,7 +2,6 @@ using Pkg
 Pkg.activate("./scripts")
 
 using FieldEncoders
-using GLMakie
 using ImageCore: RGB, N0f8, colorview
 
 include("visualize_utils.jl")

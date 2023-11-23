@@ -1,3 +1,5 @@
+using GLMakie
+
 function visualize_data(x::AbstractArray{T,3}) where {T}
     n = size(x, 1)
     fig = Figure(resolution=(100*n,100))
