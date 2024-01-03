@@ -12,6 +12,8 @@ LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 MLUtils = "f1d291b0-491e-4a28-83b9-f70985020b54"
 
 [compat]
+ChainRulesCore = "1"
+DocStringExtensions = "0.9"
 MLUtils = "0.4"
 
 [extras]
