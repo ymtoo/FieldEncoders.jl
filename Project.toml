@@ -13,6 +13,9 @@ MLUtils = "f1d291b0-491e-4a28-83b9-f70985020b54"
 
 [compat]
 EllipsisNotation = "1"
+ChainRulesCore = "1"
+DocStringExtensions = "0.9"
+MLUtils = "0.4"
 
 [extras]
 CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
